@@ -23,12 +23,11 @@ const cityRoutes = require("./src/routes/CityRoutes")
 app.use("/city",cityRoutes)
 
 const areaRoutes = require("./src/routes/AreaRoutes")
-// app.use("/area",areaRoutes)
-app.use(areaRoutes)
+app.use("/area",areaRoutes)
 
 const hordingRoutes = require("./src/routes/HordingRoutes")
-// app.use("/hording",hordingRoutes)
-app.use(hordingRoutes)
+app.use("/hording",hordingRoutes)
+
 
 
 

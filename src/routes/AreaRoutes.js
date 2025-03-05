@@ -1,9 +1,8 @@
 const routes = require("express").Router()
 const areaController= require("../controllers/AreaController")
-routes.get("/areas",areaController.getAllAreas)
-routes.post("/area",areaController.addArea)
-routes.delete("/area/:id",areaController.deleteArea)
-routes.get("/area/:id",areaController.getAreaById)
+routes.get("/getall",areaController.getAllAreas)
+routes.post("/add",areaController.addArea)
+routes.get("/getareabycity/:cityId",areaController.getAreaBycityId)
 
 
 module.exports = routes
