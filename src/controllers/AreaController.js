@@ -11,7 +11,6 @@ const addArea = async (req, res) => {
     res.status(500).json({ message: err });
   }
 };
-
 const getAreas = async (req, res) => {
   try {
     const areas = await areaModel.find().populate("cityId").populate("stateId");

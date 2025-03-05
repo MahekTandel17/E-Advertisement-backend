@@ -1,41 +1,39 @@
-const stateModel = require("../models/StateModel")
-const getAllStates = async (req,res)=>{
-    const states = await stateModel.find()
+const stateModel = require("../models/StateModel");
 
-    res.json({
-        message: "State fetches successfully",
-        data: states
+const addState = async (req, res) => {
+  try {
+    const savedState = await stateModel.create(req.body);
+    res.status(201).json({
+      message: "State added successfully",
+      data: savedState,
     });
+  } catch (err) {
+    res.status(500).json({
+      message: err,
+    });
+  }
 };
 
-const addState = async (req,res)=>{
-    const savedState = await stateModel.create(req.body)
-    res.json({
-        message:"State Created....",
-        data: savedState
-    })
+const getAllStates = async (req, res) => {
+
+    try{
+        
+        const states = await stateModel.find();
+        res.status(200).json({
+            message: "All states fetched successfully",
+            data: states
+        })
+
+    }catch(err){
+
+        res.status(500).json({
+            message: err
+        })
+
+    }
+
 }
-
-const deleteState = async(req,res)=>{
-
-    const deletedState = await stateModel.findByIdAndDelete(req.params.id)
-    res.json({
-        message: "State Deleted Successfully....",
-        data: deletedState
-    })
-}
-
-const getStateById = async(req,res)=>{
-
-    const foundState = await stateModel.findById(req.params.id)
-    res.json({
-        message: "State Fatched....",
-        data:foundState
-    })
-}
-
-
-//object export 
 module.exports = {
-    getAllStates,addState,deleteState,getStateById
+    addState,
+    getAllStates,
 }
