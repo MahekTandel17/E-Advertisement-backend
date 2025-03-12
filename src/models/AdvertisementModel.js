@@ -62,4 +62,4 @@ const advertisementSchema = new Schema({
     timestamps: true
 })
 
-module.exports = mongoose.model("Advertisement",advertisementSchema)
+module.exports = mongoose.model("advertisement",advertisementSchema)
