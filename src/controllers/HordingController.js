@@ -1,7 +1,7 @@
 const hordingModel = require("../models/HordingModel");
 const multer = require("multer");
 const path = require("path");
-const cloudinaryUtil = require("../utils/CloudanryUtil");
+const cloudinaryUtil = require("../utils/CloudnaryUtil");
 //storage engine
 
 const storage = multer.diskStorage({

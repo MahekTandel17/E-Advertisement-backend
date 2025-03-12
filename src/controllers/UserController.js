@@ -80,10 +80,7 @@ const deleteUser = async(req,res)=>{
 //         })
 //     }
 // }
-const loginUser = async (req, res) => {
-    const { email, password } = req.body;
-    const foundUserFromEmail = await userModel.findOne({ email }).populate("roleId");
-    console.log(foundUserFromEmail)
+
 
     // for(const foundUserFromEmail of users){
     //     if(users.roleId){
@@ -93,6 +90,11 @@ const loginUser = async (req, res) => {
 
     // }
 
+
+const loginUser = async (req, res) => {
+    const { email, password } = req.body;
+    const foundUserFromEmail = await userModel.findOne({ email }).populate("roleId");
+    console.log(foundUserFromEmail)
 
     if (!foundUserFromEmail) {
         return res.status(401).json({ message: "Email not found" });

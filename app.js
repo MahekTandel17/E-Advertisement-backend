@@ -29,10 +29,6 @@ const hordingRoutes = require("./src/routes/HordingRoutes")
 app.use("/hording",hordingRoutes)
 
 
-
-
-
-
 const PORT = 3000
 app.listen(PORT,()=>{
     console.log("server started on the port number"+ PORT)

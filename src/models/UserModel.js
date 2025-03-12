@@ -3,12 +3,6 @@ const Schema = mongoose.Schema
 
 const userSchema = new Schema({
 
-    // user_id: {
-    //     type: Number,
-    //     unique: true,
-    //     required: true,
-    //     autoIncrement: true
-    // },
     name: {
         type: String,
         required: true,
